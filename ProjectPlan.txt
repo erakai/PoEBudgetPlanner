@@ -1,0 +1,6 @@
+A GUI interface that allows the user to enter differing amounts of currency, have it converted to the standard,
+Chaos orbs, and then select different items and add custom ones to a build plan. This build plan will record the amount
+of currency the selected items will cost by pulling data from poe.ninja's api, and help the user budget their build.
+
+This interface will be created with the java swing library, and the Jackson json parser will be used to get data from
+poe.ninja.
