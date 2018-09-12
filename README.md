@@ -20,9 +20,9 @@ Developed solely by EragonKa in Java 1.8
 
 - Allows users to choose between previous challenge leagues, the current one, and standard/hardcore for prices
 
-### Uses:
+### Utilizes:
 
 
-- [poe.ninja:](https://poe.ninja/) A website created by [rasmuskl](https://old.reddit.com/user/rasmuskl) that derives the average cost of an item
+- [poe.ninja:](https://poe.ninja/) A website created by [rasmuskl](https://old.reddit.com/user/rasmuskl) that provides an economic and build overview of Path of Exile, using the public stash tab API
 
 - [The Jackson Library:](https://github.com/FasterXML/jackson) A library created to help parse JSON files in java
