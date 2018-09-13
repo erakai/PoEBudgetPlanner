@@ -1,53 +1,41 @@
 package com;
 
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.oracle.javafx.jmx.json.JSONException;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Arrays;
-import java.util.List;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-public class Main {
+public class Dataload {
+    private static String add = "https://poe.ninja/api/data/currencyoverview?league=Delve&type=Currency";
+    private static ObjectMapper objMap = new ObjectMapper();
+    private static int timeout = 1000;
 
-    public static void main(String[] args) throws Exception {
-        String add = "https://poe.ninja/api/data/currencyoverview?league=Delve&type=Currency";
+    public static Map<String, Double> getCurrencyMap() throws IOException {
+        JsonNode root = objMap.readTree(getJSON(add, timeout)).get("lines");
+        Map<String, Double> currency = new HashMap<>();
 
-        ObjectMapper objMap = new ObjectMapper();
+        int currentI = 0;
+        do {
+            String name = root.get(currentI).get("currencyTypeName").toString().replace("\"", "");
+            double value = root.get(currentI).get("chaosEquivalent").doubleValue();
+            currency.put(name, value);
+            currentI++;
+        } while (root.get(currentI+1) != null);
 
-        JsonNode root = objMap.readTree(getJSON(add,1000));
-
-        Scanner input = new Scanner(System.in);
-
-        while(true) {
-            System.out.println("Enter index:");
-            String sinp = input.next();
-
-            if (sinp.equals("quit")) {
-                break;
-            }
-
-            int inp = Integer.parseInt(sinp);
-
-            try {
-                JsonNode number = root.get("lines").get(inp);
-                System.out.println(number.get("currencyTypeName") + " : " + number.get("chaosEquivalent") + " chaos");
-            } catch (Exception ex) {
-                System.out.println("Invalid.");
-            }
+        if (!currency.isEmpty()) {
+            currency.put("Chaos Orb", 1.0);
         }
+
+        return currency;
     }
+
 
     //taken mostly from stackoverflow, need to learn how to do this
     public static String getJSON(String url, int timeout) {
@@ -86,4 +74,33 @@ public class Main {
         }
         return null;
     }
+
+
+
+
+    //mostly useless method in command line
+    public static void runCurrencyViewer() throws Exception {
+        JsonNode root = objMap.readTree(getJSON(add,timeout));
+
+        Scanner input = new Scanner(System.in);
+
+        while(true) {
+            System.out.println("Enter index:");
+            String sinp = input.next();
+
+            if (sinp.equals("quit")) {
+                break;
+            }
+
+            int inp = Integer.parseInt(sinp);
+
+            try {
+                JsonNode number = root.get("lines").get(inp);
+                System.out.println(number.get("currencyTypeName") + " : " + number.get("chaosEquivalent") + " chaos");
+            } catch (Exception ex) {
+                System.out.println("Invalid.");
+            }
+        }
+    }
+
 }

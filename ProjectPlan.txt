@@ -4,3 +4,5 @@ of currency the selected items will cost by pulling data from poe.ninja's api, a
 
 This interface will be created with the java swing library, and the Jackson json parser will be used to get data from
 poe.ninja.
+
+Use serializable options object?
