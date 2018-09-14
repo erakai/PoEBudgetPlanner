@@ -28,6 +28,7 @@ public class CurrencyMenu extends JFrame {
             "Exalts", "Chaos", "Vaals", "Regrets",
             "Alchs", "Fusings", "Chisels", "Jewellers",
     };
+
     public static JTextField[] enterFields = new JTextField[currencyNames.length];
     public static JLabel[] labelFields = new JLabel[currencyNames.length];
 
@@ -92,6 +93,16 @@ public class CurrencyMenu extends JFrame {
         con.gridy = 1;
         inputButtons.add(currencyC, con);
 
+        JButton clearCurrency = new JButton(" Clear Balance ");
+        con.gridx = 1;
+        con.gridy = 1;
+        clearCurrency.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                clearButtonPressed();
+            }
+        });
+        inputButtons.add(clearCurrency, con);
+
         con.insets = new Insets(0,0,0,0);
         JButton submit = new JButton("Add Currency");
         con.gridx = 3;
@@ -143,6 +154,10 @@ public class CurrencyMenu extends JFrame {
                 }
             }
         };
+    }
+
+    private static void clearButtonPressed() {
+        addChaos((-1 * addChaos(0)));
     }
 
     private static void addButtonPressed() {
@@ -242,7 +257,6 @@ public class CurrencyMenu extends JFrame {
         //JOptionPane otherCurrencyPopup = new JOptionPane()
     }
 
-
     private static double addChaos(double amount) {
         currencyInChaos += amount;
 
@@ -258,6 +272,7 @@ public class CurrencyMenu extends JFrame {
         return currencyInChaos;
     }
 
+    //TODO: make this into a dialog window to append to the main GUI
     public static void init(Map<String, Double> cm) {
         //setting up currency names and values
         currency = cm;

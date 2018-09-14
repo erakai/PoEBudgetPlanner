@@ -5,6 +5,9 @@ public class PoEBudgetPlanner {
     public static void main(String[] args) throws Exception {
         CurrencyMenu.init(Dataload.getCurrencyMap());
 
+        //need to make currencymenu into a dialog box
+
+
         /*Map<String, Double> currency = Dataload.getCurrencyMap();
 
         Scanner input = new Scanner(System.in);

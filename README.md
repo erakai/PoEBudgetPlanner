@@ -26,3 +26,5 @@ Developed solely by EragonKai in Java 1.8
 - [poe.ninja:](https://poe.ninja/) A website created by [rasmuskl](https://old.reddit.com/user/rasmuskl) that provides an economic and build overview of Path of Exile, using the public stash tab API
 
 - [The Jackson Library:](https://github.com/FasterXML/jackson) A library created to help parse JSON files in java
+
+- Swing, a Java GUI library
