@@ -1,14 +1,9 @@
 package com;
-import com.AddCurrency.CurrencyMenu;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
 
 public class PoEBudgetPlanner {
 
     public static void main(String[] args) throws Exception {
-        CurrencyMenu.init();
+        CurrencyMenu.init(Dataload.getCurrencyMap());
 
         /*Map<String, Double> currency = Dataload.getCurrencyMap();
 

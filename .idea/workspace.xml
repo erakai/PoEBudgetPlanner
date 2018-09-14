@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="02dd8a07-b9ca-4acf-8207-329f1a9cc659" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/AddCurrency/CurrencyMenu.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/Dataload.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/AddCurrency/CurrencyMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/PoEBudgetPlanner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectPlan.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectPlan.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/Item.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/Mine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/MyJson.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Item.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Dataload.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Mine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/MyJson.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/AddCurrency/CurrencyMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/PoEBudgetPlanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/PoEBudgetPlanner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/AddCurrency/CurrencyMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/CurrencyMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/PoEBudgetPlanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/PoEBudgetPlanner.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,14 +46,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="17" />
-          <entry key="java" value="9752" />
+          <entry key="java" value="11077" />
           <entry key="json" value="63" />
           <entry key="txt" value="656" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="9752" />
+          <entry key="JAVA" value="11077" />
           <entry key="JSON" value="63" />
           <entry key="PLAIN_TEXT" value="673" />
         </counts>
@@ -75,22 +65,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/PoEBudgetPlanner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="120">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/AddCurrency/CurrencyMenu.java">
+        <entry file="file://$PROJECT_DIR$/src/com/CurrencyMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="52" column="31" lean-forward="true" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="31" />
+            <state relative-caret-position="387">
+              <caret line="158" column="30" lean-forward="true" selection-start-line="158" selection-start-column="30" selection-end-line="158" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#4884#4885#0" expanded="true" />
+                <element signature="e#4934#4935#0" expanded="true" />
+                <element signature="e#5207#5208#0" expanded="true" />
+                <element signature="e#5257#5258#0" expanded="true" />
+                <element signature="e#5713#5714#0" expanded="true" />
+                <element signature="e#5754#5755#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -150,6 +143,7 @@
         <option value="$PROJECT_DIR$/src/com/Main.java" />
         <option value="$PROJECT_DIR$/src/com/PoEBudgetPlanner.java" />
         <option value="$PROJECT_DIR$/src/com/AddCurrency/CurrencyMenu.java" />
+        <option value="$PROJECT_DIR$/src/com/CurrencyMenu.java" />
       </list>
     </option>
   </component>
@@ -186,13 +180,6 @@
             </path>
             <path>
               <item name="PoeBudgetPlanner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PoeBudgetPlanner" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="AddCurrency" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PoeBudgetPlanner" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -205,12 +192,17 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536869240982" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536892593037" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -347,16 +339,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/Currency.java" />
     <entry file="file://$PROJECT_DIR$/src/com/AddCurrency/CurrencyInsert.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/PoEBudgetPlanner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/Dataload.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -374,12 +356,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/AddCurrency/CurrencyMenu.java">
+    <entry file="file://$PROJECT_DIR$/src/com/PoEBudgetPlanner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="52" column="31" lean-forward="true" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="31" />
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/CurrencyMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="158" column="30" lean-forward="true" selection-start-line="158" selection-start-column="30" selection-end-line="158" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4884#4885#0" expanded="true" />
+            <element signature="e#4934#4935#0" expanded="true" />
+            <element signature="e#5207#5208#0" expanded="true" />
+            <element signature="e#5257#5258#0" expanded="true" />
+            <element signature="e#5713#5714#0" expanded="true" />
+            <element signature="e#5754#5755#0" expanded="true" />
           </folding>
         </state>
       </provider>
