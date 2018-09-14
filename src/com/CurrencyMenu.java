@@ -8,12 +8,15 @@ import javax.swing.text.DocumentFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class CurrencyMenu extends JFrame {
+    private static final int maxCharacters = 5;
     private static final int textAreaColumns = 4;
 
+    public static CurrencyMenu currencyFrame;
     public static double currencyInChaos;
     public static JLabel currencyC;
 
@@ -71,38 +74,8 @@ public class CurrencyMenu extends JFrame {
                 toGX = 0;
             }
 
-            //straight from StackOverflow hehehhehehe
             AbstractDocument document = (AbstractDocument) enterFields[i].getDocument();
-            final int maxCharacters = 5;
-            document.setDocumentFilter(new DocumentFilter() {
-                public void replace(FilterBypass fb, int offs, int length,
-                                    String str, AttributeSet a) throws BadLocationException {
-
-                    String text = fb.getDocument().getText(0,
-                            fb.getDocument().getLength());
-                    text += str;
-                    if ((fb.getDocument().getLength() + str.length() - length) <= maxCharacters
-                            && text.matches("^[0-9]+[.]?[0-9]{0,1}$")) {
-                        super.replace(fb, offs, length, str, a);
-                    } else {
-                        Toolkit.getDefaultToolkit().beep();
-                    }
-                }
-
-                public void insertString(FilterBypass fb, int offs, String str,
-                                         AttributeSet a) throws BadLocationException {
-
-                    String text = fb.getDocument().getText(0,
-                            fb.getDocument().getLength());
-                    text += str;
-                    if ((fb.getDocument().getLength() + str.length()) <= maxCharacters
-                            && text.matches("^[0-9]$")) {
-                        super.insertString(fb, offs, str, a);
-                    } else {
-                        Toolkit.getDefaultToolkit().beep();
-                    }
-                }
-            });
+            document.setDocumentFilter(myGetDocumentFilter());
 
             inputFields.add(enterFields[i], con);
         }
@@ -148,6 +121,30 @@ public class CurrencyMenu extends JFrame {
         pane.add(inputButtons, BorderLayout.SOUTH);
     }
 
+    //straight from StackOverflow hehehhehehe, makes sure they can only enter up to 5 numbers
+    private static DocumentFilter myGetDocumentFilter() {
+        return new DocumentFilter() {
+            public void replace(FilterBypass fb, int offs, int length, String str, AttributeSet a) throws BadLocationException {
+                String text = fb.getDocument().getText(0, fb.getDocument().getLength());
+                text += str;
+                if ((fb.getDocument().getLength() + str.length() - length) <= maxCharacters && text.matches("[0-9]+")) {
+                    super.replace(fb, offs, length, str, a);
+                } else {
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+            public void insertString(FilterBypass fb, int offs, String str, AttributeSet a) throws BadLocationException {
+                String text = fb.getDocument().getText(0, fb.getDocument().getLength());
+                text += str;
+                if ((fb.getDocument().getLength() + str.length()) <= maxCharacters && text.matches("[0-9]+")) {
+                    super.insertString(fb, offs, str, a);
+                } else {
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        };
+    }
+
     private static void addButtonPressed() {
         //update to use api
         for (JTextField i: enterFields) {
@@ -162,12 +159,103 @@ public class CurrencyMenu extends JFrame {
     }
 
     private static void otherButtonPressed() {
-        System.out.println("Bye");
+        initOtherDialog();
     }
 
-    private static void addChaos(double amount) {
+    private static void initOtherDialog() {
+        JDialog dialog = new JDialog(currencyFrame, "Other Currency",true);
+        JPanel dialogPanel = new JPanel(new GridBagLayout());
+
+        GridBagConstraints c = new GridBagConstraints();
+
+        c.insets = new Insets(5,0,0,25);
+
+        JLabel instruct = new JLabel("Enter amount:");
+        c.gridx=0;
+        c.gridy=0;
+        dialogPanel.add(instruct, c);
+
+        c.insets = new Insets(5,15,0,0);
+
+        JLabel instruct2 = new JLabel("Select type:");
+        c.gridx=1;
+        c.gridy=0;
+        dialogPanel.add(instruct2,c);
+
+        c.insets = new Insets(0,0,5,10);
+
+        JTextField amount = new JTextField(textAreaColumns);
+        c.gridx=0;
+        c.gridy=1;
+        amount.setText("0");
+        AbstractDocument document = (AbstractDocument) amount.getDocument();
+        document.setDocumentFilter(myGetDocumentFilter());
+        dialogPanel.add(amount, c);
+
+        c.insets = new Insets(0,10,5,0);
+
+        //getting the list of currencies
+        ArrayList<String> tempC = new ArrayList<String>(currency.keySet());
+        String[] currencies = new String[tempC.size()];
+        for (int i = 0; i< tempC.size();i++) {
+            currencies[i] = tempC.get(i);
+        }
+        JComboBox currencyList = new JComboBox(currencies);
+        c.gridx=1;
+        c.gridy=1;
+        //currencyList.setEditable(true); enable later when i can make it more specific
+        dialogPanel.add(currencyList,c);
+
+        JLabel thisCurrencyCounter = new JLabel("Current balance: " + currencyInChaos);
+        c.gridx=0;
+        c.gridy=3;
+        dialogPanel.add(thisCurrencyCounter, c);
+
+      //  JPanel buttonSelect = new JPanel(new GridBagLayout());
+
+        JButton addCurrency = new JButton("Add Currency");
+        c.gridx=1;
+        c.gridy=2;
+        addCurrency.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                thisCurrencyCounter.setText("Current balance: " + String.valueOf(addChaos((Double.parseDouble(amount.getText()) * currency.get(currencyList.getSelectedItem())))));
+            }
+        });
+        dialogPanel.add(addCurrency,c);
+
+        JButton toClose = new JButton("Close");
+        c.gridx=1;
+        c.gridy=3;
+        toClose.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                dialog.dispose();
+            }
+        });
+        dialogPanel.add(toClose,c);
+
+       // dialog.add(buttonSelect, BorderLayout.SOUTH);
+        dialog.add(dialogPanel, BorderLayout.NORTH);
+        dialog.setSize(475,170);
+        dialog.setLocationRelativeTo(currencyFrame);
+        dialog.setVisible(true);
+
+        //JOptionPane otherCurrencyPopup = new JOptionPane()
+    }
+
+
+    private static double addChaos(double amount) {
         currencyInChaos += amount;
+
+        if (currencyInChaos > 9999999) {
+            currencyInChaos = 9999999;
+        }
+
+        //round to hundredths place
+        currencyInChaos = (double)Math.round(currencyInChaos * 100d) / 100d;
+
         currencyC.setText("Current balance: " + currencyInChaos + "c");
+
+        return currencyInChaos;
     }
 
     public static void init(Map<String, Double> cm) {
@@ -175,7 +263,7 @@ public class CurrencyMenu extends JFrame {
         currency = cm;
 
         //loading window
-        CurrencyMenu currencyFrame = new CurrencyMenu("Currency Input");
+        currencyFrame = new CurrencyMenu("Currency Input");
         currencyFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         currencyFrame.addComponents(currencyFrame.getContentPane());
         currencyFrame.pack();
@@ -183,9 +271,5 @@ public class CurrencyMenu extends JFrame {
         currencyFrame.setVisible(true);
 
     }
-
-
-
-
 
 }

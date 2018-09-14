@@ -3,12 +3,12 @@ A small GUI program that draws the value of items from poe.ninja's api, and allo
 
 ## Information:
 
-Developed solely by EragonKa in Java 1.8
+Developed solely by EragonKai in Java 1.8
 
 ### Goals:
 
 
-- Easy to user interface, utilizing the built in Swing GUI
+- Easy to use interface, utilizing the built in Swing GUI
 
 - Allows users to input multiple currency types, which are then all converted to chaos
 

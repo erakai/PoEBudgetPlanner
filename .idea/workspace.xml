@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="02dd8a07-b9ca-4acf-8207-329f1a9cc659" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/mbp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/mbp.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/AddCurrency/CurrencyMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/PoEBudgetPlanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/PoEBudgetPlanner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/AddCurrency/CurrencyMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/CurrencyMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/PoEBudgetPlanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/PoEBudgetPlanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/CurrencyMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/CurrencyMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/Dataload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Dataload.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,12 +19,13 @@
     <session id="-970385975">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.11" value="2" />
+          <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -32,6 +33,7 @@
           <entry key="class" value="9" />
           <entry key="java" value="9" />
           <entry key="json" value="1" />
+          <entry key="md" value="2" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
@@ -40,20 +42,20 @@
           <entry key="CLASS" value="9" />
           <entry key="JAVA" value="9" />
           <entry key="JSON" value="1" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="17" />
-          <entry key="java" value="11077" />
+          <entry key="java" value="15291" />
           <entry key="json" value="63" />
           <entry key="txt" value="656" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="11077" />
+          <entry key="JAVA" value="15291" />
           <entry key="JSON" value="63" />
           <entry key="PLAIN_TEXT" value="673" />
         </counts>
@@ -66,7 +68,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/PoEBudgetPlanner.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -74,16 +76,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/CurrencyMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="158" column="30" lean-forward="true" selection-start-line="158" selection-start-column="30" selection-end-line="158" selection-end-column="30" />
+            <state relative-caret-position="338">
+              <caret line="231" column="13" lean-forward="true" selection-start-line="231" selection-start-column="13" selection-end-line="231" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4884#4885#0" expanded="true" />
-                <element signature="e#4934#4935#0" expanded="true" />
-                <element signature="e#5207#5208#0" expanded="true" />
-                <element signature="e#5257#5258#0" expanded="true" />
-                <element signature="e#5713#5714#0" expanded="true" />
-                <element signature="e#5754#5755#0" expanded="true" />
+                <element signature="method#CurrencyMenu#0;class#CurrencyMenu#0" />
+                <element signature="method#addComponents#0;class#CurrencyMenu#0" />
+                <element signature="e#3608#3609#0" expanded="true" />
+                <element signature="e#3658#3659#0" expanded="true" />
+                <element signature="e#3924#3925#0" expanded="true" />
+                <element signature="e#3974#3975#0" expanded="true" />
+                <element signature="method#myGetDocumentFilter#0;class#CurrencyMenu#0" />
+                <element signature="method#addButtonPressed#0;class#CurrencyMenu#0" />
+                <element signature="e#6629#6637#0" expanded="true" />
+                <element signature="e#8232#8233#0" expanded="true" />
+                <element signature="e#8280#8281#0" expanded="true" />
+                <element signature="method#init#0;class#CurrencyMenu#0" />
               </folding>
             </state>
           </provider>
@@ -92,8 +100,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/Dataload.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+            <state relative-caret-position="106">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -137,12 +145,13 @@
         <option value="$PROJECT_DIR$/src/com/MyJson.json" />
         <option value="$PROJECT_DIR$/src/com/Mine.java" />
         <option value="$PROJECT_DIR$/src/com/Currency.java" />
-        <option value="$PROJECT_DIR$/src/com/Dataload.java" />
         <option value="$PROJECT_DIR$/src/com/AddCurrency/CurrencyInsert.java" />
         <option value="$PROJECT_DIR$/ProjectPlan.txt" />
         <option value="$PROJECT_DIR$/src/com/Main.java" />
         <option value="$PROJECT_DIR$/src/com/PoEBudgetPlanner.java" />
         <option value="$PROJECT_DIR$/src/com/AddCurrency/CurrencyMenu.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/com/Dataload.java" />
         <option value="$PROJECT_DIR$/src/com/CurrencyMenu.java" />
       </list>
     </option>
@@ -160,6 +169,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -186,13 +198,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536892593037" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536908846393" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -253,7 +262,7 @@
     <frame x="0" y="23" width="1280" height="752" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21405493" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.21728595" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -339,16 +348,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/Currency.java" />
     <entry file="file://$PROJECT_DIR$/src/com/AddCurrency/CurrencyInsert.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/Dataload.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ProjectPlan.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -356,25 +355,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="15">
+            <caret line="1" column="55" lean-forward="true" selection-start-line="1" selection-start-column="55" selection-end-line="1" selection-end-column="55" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/PoEBudgetPlanner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Dataload.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/CurrencyMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="158" column="30" lean-forward="true" selection-start-line="158" selection-start-column="30" selection-end-line="158" selection-end-column="30" />
+        <state relative-caret-position="338">
+          <caret line="231" column="13" lean-forward="true" selection-start-line="231" selection-start-column="13" selection-end-line="231" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4884#4885#0" expanded="true" />
-            <element signature="e#4934#4935#0" expanded="true" />
-            <element signature="e#5207#5208#0" expanded="true" />
-            <element signature="e#5257#5258#0" expanded="true" />
-            <element signature="e#5713#5714#0" expanded="true" />
-            <element signature="e#5754#5755#0" expanded="true" />
+            <element signature="method#CurrencyMenu#0;class#CurrencyMenu#0" />
+            <element signature="method#addComponents#0;class#CurrencyMenu#0" />
+            <element signature="e#3608#3609#0" expanded="true" />
+            <element signature="e#3658#3659#0" expanded="true" />
+            <element signature="e#3924#3925#0" expanded="true" />
+            <element signature="e#3974#3975#0" expanded="true" />
+            <element signature="method#myGetDocumentFilter#0;class#CurrencyMenu#0" />
+            <element signature="method#addButtonPressed#0;class#CurrencyMenu#0" />
+            <element signature="e#6629#6637#0" expanded="true" />
+            <element signature="e#8232#8233#0" expanded="true" />
+            <element signature="e#8280#8281#0" expanded="true" />
+            <element signature="method#init#0;class#CurrencyMenu#0" />
           </folding>
         </state>
       </provider>

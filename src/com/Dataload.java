@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class Dataload {
     private static String add = "https://poe.ninja/api/data/currencyoverview?league=Delve&type=Currency";
     private static ObjectMapper objMap = new ObjectMapper();
-    private static int timeout = 1000;
+    private static int timeout = 5000;
 
     public static Map<String, Double> getCurrencyMap() throws IOException {
         JsonNode root = objMap.readTree(getJSON(add, timeout)).get("lines");
