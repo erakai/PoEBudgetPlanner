@@ -7,17 +7,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02dd8a07-b9ca-4acf-8207-329f1a9cc659" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/CurrencyMenu$6.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/CurrencyMenu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/CurrencyMenu$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/CurrencyMenu$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/CurrencyMenu$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/CurrencyMenu$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/CurrencyMenu$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/CurrencyMenu$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/CurrencyMenu$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/CurrencyMenu$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/CurrencyMenu$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/CurrencyMenu$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/CurrencyMenu$6.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/CurrencyMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/CurrencyMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/Dataload.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/Dataload.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/PoEBudgetPlanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PoeBudgetPlanner/com/PoEBudgetPlanner.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/CurrencyMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/CurrencyMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/Dataload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Dataload.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/PoEBudgetPlanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/PoEBudgetPlanner.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -31,19 +32,20 @@
     <session id="-970385975">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.11" value="3" />
+          <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="9" />
-          <entry key="java" value="9" />
+          <entry key="java" value="11" />
           <entry key="json" value="1" />
           <entry key="md" value="3" />
           <entry key="txt" value="1" />
@@ -52,7 +54,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="9" />
-          <entry key="JAVA" value="9" />
+          <entry key="JAVA" value="11" />
           <entry key="JSON" value="1" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="3" />
@@ -61,7 +63,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="17" />
-          <entry key="java" value="15807" />
+          <entry key="java" value="18409" />
           <entry key="json" value="63" />
           <entry key="md" value="61" />
           <entry key="txt" value="656" />
@@ -69,7 +71,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="15807" />
+          <entry key="JAVA" value="18409" />
           <entry key="JSON" value="63" />
           <entry key="Markdown" value="61" />
           <entry key="PLAIN_TEXT" value="673" />
@@ -82,30 +84,58 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/PoEBudgetPlanner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+            <state relative-caret-position="60">
+              <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/CurrentInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+              <folding>
+                <element signature="e#238#239#0" expanded="true" />
+                <element signature="e#262#263#0" expanded="true" />
+                <element signature="e#130#131#0" expanded="true" />
+                <element signature="e#168#169#0" expanded="true" />
+                <element signature="e#234#235#0" expanded="true" />
+                <element signature="e#295#296#0" expanded="true" />
+                <element signature="e#579#580#0" expanded="true" />
+                <element signature="e#635#636#0" expanded="true" />
+                <element signature="e#670#671#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/CurrencyMenu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="836">
+              <caret line="276" lean-forward="true" selection-start-line="276" selection-end-line="276" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#myGetDocumentFilter#0;class#CurrencyMenu#0" />
+                <element signature="method#addButtonPressed#0;class#CurrencyMenu#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/CurrencyMenu.java">
+        <entry file="file://$PROJECT_DIR$/src/com/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="158" selection-start-line="158" selection-end-line="158" />
+            <state relative-caret-position="780">
+              <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#CurrencyMenu#0;class#CurrencyMenu#0" />
-                <element signature="method#addComponents#0;class#CurrencyMenu#0" />
-                <element signature="e#3510#3511#0" expanded="true" />
-                <element signature="e#3562#3563#0" expanded="true" />
-                <element signature="method#myGetDocumentFilter#0;class#CurrencyMenu#0" />
-                <element signature="method#addButtonPressed#0;class#CurrencyMenu#0" />
-                <element signature="method#initOtherDialog#0;class#CurrencyMenu#0" />
-                <element signature="e#8232#8233#0" expanded="true" />
-                <element signature="e#8280#8281#0" expanded="true" />
-                <element signature="method#addChaos#0;class#CurrencyMenu#0" />
-                <element signature="method#init#0;class#CurrencyMenu#0" />
+                <element signature="method#MainWindow#0;class#MainWindow#0" />
+                <element signature="e#288#289#0" expanded="true" />
+                <element signature="e#314#315#0" expanded="true" />
+                <element signature="e#1831#1832#0" expanded="true" />
+                <element signature="e#1922#1923#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -114,8 +144,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/Dataload.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="311">
+              <caret line="58" column="38" lean-forward="true" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -163,10 +193,12 @@
         <option value="$PROJECT_DIR$/ProjectPlan.txt" />
         <option value="$PROJECT_DIR$/src/com/Main.java" />
         <option value="$PROJECT_DIR$/src/com/AddCurrency/CurrencyMenu.java" />
-        <option value="$PROJECT_DIR$/src/com/Dataload.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/com/Dataload.java" />
         <option value="$PROJECT_DIR$/src/com/PoEBudgetPlanner.java" />
+        <option value="$PROJECT_DIR$/src/com/CurrentInfo.java" />
         <option value="$PROJECT_DIR$/src/com/CurrencyMenu.java" />
+        <option value="$PROJECT_DIR$/src/com/MainWindow.java" />
       </list>
     </option>
   </component>
@@ -184,8 +216,8 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -215,7 +247,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536909069331" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537212583113" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -276,7 +308,35 @@
     <frame x="0" y="23" width="1280" height="752" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22051696" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.22374798" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3287879" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.19242424" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3151515" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22374798" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -302,10 +362,22 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/MainWindow.java</url>
+          <line>12</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$PROJECT_DIR$/jackson-databind-2.9.6.jar!/com/fasterxml/jackson/databind/JsonMappingException.class">
@@ -363,27 +435,17 @@
     <entry file="file://$PROJECT_DIR$/src/com/Currency.java" />
     <entry file="file://$PROJECT_DIR$/src/com/AddCurrency/CurrencyInsert.java" />
     <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="244">
             <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Dataload.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -396,28 +458,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/PoEBudgetPlanner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        <state relative-caret-position="60">
+          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/CurrentInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+          <folding>
+            <element signature="e#238#239#0" expanded="true" />
+            <element signature="e#262#263#0" expanded="true" />
+            <element signature="e#130#131#0" expanded="true" />
+            <element signature="e#168#169#0" expanded="true" />
+            <element signature="e#234#235#0" expanded="true" />
+            <element signature="e#295#296#0" expanded="true" />
+            <element signature="e#579#580#0" expanded="true" />
+            <element signature="e#635#636#0" expanded="true" />
+            <element signature="e#670#671#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/CurrencyMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="158" selection-start-line="158" selection-end-line="158" />
+        <state relative-caret-position="836">
+          <caret line="276" lean-forward="true" selection-start-line="276" selection-end-line="276" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#CurrencyMenu#0;class#CurrencyMenu#0" />
-            <element signature="method#addComponents#0;class#CurrencyMenu#0" />
-            <element signature="e#3510#3511#0" expanded="true" />
-            <element signature="e#3562#3563#0" expanded="true" />
             <element signature="method#myGetDocumentFilter#0;class#CurrencyMenu#0" />
             <element signature="method#addButtonPressed#0;class#CurrencyMenu#0" />
-            <element signature="method#initOtherDialog#0;class#CurrencyMenu#0" />
-            <element signature="e#8232#8233#0" expanded="true" />
-            <element signature="e#8280#8281#0" expanded="true" />
-            <element signature="method#addChaos#0;class#CurrencyMenu#0" />
-            <element signature="method#init#0;class#CurrencyMenu#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Dataload.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="58" column="38" lean-forward="true" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#MainWindow#0;class#MainWindow#0" />
+            <element signature="e#288#289#0" expanded="true" />
+            <element signature="e#314#315#0" expanded="true" />
+            <element signature="e#1831#1832#0" expanded="true" />
+            <element signature="e#1922#1923#0" expanded="true" />
           </folding>
         </state>
       </provider>

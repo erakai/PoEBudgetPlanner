@@ -2,6 +2,7 @@ package com;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -17,23 +18,33 @@ public class Dataload {
     private static ObjectMapper objMap = new ObjectMapper();
     private static int timeout = 5000;
 
-    public static Map<String, Double> getCurrencyMap() throws IOException {
-        JsonNode root = objMap.readTree(getJSON(add, timeout)).get("lines");
-        Map<String, Double> currency = new HashMap<>();
+    public static Map<String, Double> getCurrencyMap() {
+        JsonNode root;
 
-        int currentI = 0;
-        do {
-            String name = root.get(currentI).get("currencyTypeName").toString().replace("\"", "");
-            double value = root.get(currentI).get("chaosEquivalent").doubleValue();
-            currency.put(name, value);
-            currentI++;
-        } while (root.get(currentI+1) != null);
+        try {
+             root = objMap.readTree(getJSON(add, timeout)).get("lines");
 
-        if (!currency.isEmpty()) {
-            currency.put("Chaos Orb", 1.0);
-        }
+            Map<String, Double> currency = new HashMap<>();
+
+            int currentI = 0;
+            do {
+                String name = root.get(currentI).get("currencyTypeName").toString().replace("\"", "");
+                double value = root.get(currentI).get("chaosEquivalent").doubleValue();
+                currency.put(name, value);
+                currentI++;
+            } while (root.get(currentI+1) != null);
+
+            if (!currency.isEmpty()) {
+                currency.put("Chaos Orb", 1.0);
+            }
 
         return currency;
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+        return null;
     }
 
 

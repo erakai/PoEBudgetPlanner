@@ -12,12 +12,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CurrencyMenu extends JFrame {
+import static com.CurrentInfo.currencyInChaos;
+
+public class CurrencyMenu extends JDialog {
     private static final int maxCharacters = 5;
+    private static final int maxNumber = 9999999;
     private static final int textAreaColumns = 4;
 
-    public static CurrencyMenu currencyFrame;
-    public static double currencyInChaos;
+    public static JDialog currencyDialog;
     public static JLabel currencyC;
 
     public static String[] currencyNames = {
@@ -34,12 +36,18 @@ public class CurrencyMenu extends JFrame {
 
     public static Map<String, Double> currency = new HashMap<>();
 
-    public CurrencyMenu(String name) {
-        super(name);
+    public CurrencyMenu(Map<String, Double> cm, Frame app, String name) {
+        super(app, name, true);
+        currencyDialog = this;
+        currency = cm;
         setTitle("Add Currency");
+        currencyDialog.setLocationRelativeTo(app);
+        currencyDialog.setSize(400, 200);
+        addComps();
+        currencyDialog.setVisible(true);
     }
 
-    public void addComponents(Container pane) {
+    public void addComps() {
         JPanel inputFields = new JPanel(new GridBagLayout());
       //  inputFields.setPreferredSize(new Dimension(100  ,100));
 
@@ -86,7 +94,7 @@ public class CurrencyMenu extends JFrame {
         JPanel inputButtons = new JPanel(new GridBagLayout());
         con.insets = new Insets(30,0,0,0);
 
-        currencyC = new JLabel("Current balance: " + currencyInChaos + "c");
+        currencyC = new JLabel("Current balance: " + CurrentInfo.getCurrencyInChaos() + "c");
         currencyC.setFont(new Font(currencyC.getFont().getName(), Font.PLAIN, (int)(currencyC.getFont().getSize()*0.9)));
         currencyC.setToolTipText("Current balance in Chaos Orbs");
         con.gridx = 3;
@@ -128,8 +136,8 @@ public class CurrencyMenu extends JFrame {
 
         inputButtons.add(other, con);
 
-        pane.add(inputFields, BorderLayout.NORTH);
-        pane.add(inputButtons, BorderLayout.SOUTH);
+        currencyDialog.add(inputFields, BorderLayout.NORTH);
+        currencyDialog.add(inputButtons, BorderLayout.SOUTH);
     }
 
     //straight from StackOverflow hehehhehehe, makes sure they can only enter up to 5 numbers
@@ -178,7 +186,7 @@ public class CurrencyMenu extends JFrame {
     }
 
     private static void initOtherDialog() {
-        JDialog dialog = new JDialog(currencyFrame, "Other Currency",true);
+        JDialog dialog = new JDialog(currencyDialog, "Other Currency",true);
         JPanel dialogPanel = new JPanel(new GridBagLayout());
 
         GridBagConstraints c = new GridBagConstraints();
@@ -221,7 +229,7 @@ public class CurrencyMenu extends JFrame {
         //currencyList.setEditable(true); enable later when i can make it more specific
         dialogPanel.add(currencyList,c);
 
-        JLabel thisCurrencyCounter = new JLabel("Current balance: " + currencyInChaos);
+        JLabel thisCurrencyCounter = new JLabel("Current balance: " + CurrentInfo.getCurrencyInChaos() + "c");
         c.gridx=0;
         c.gridy=3;
         dialogPanel.add(thisCurrencyCounter, c);
@@ -233,7 +241,7 @@ public class CurrencyMenu extends JFrame {
         c.gridy=2;
         addCurrency.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                thisCurrencyCounter.setText("Current balance: " + String.valueOf(addChaos((Double.parseDouble(amount.getText()) * currency.get(currencyList.getSelectedItem())))));
+                thisCurrencyCounter.setText("Current balance: " + String.valueOf(addChaos((Double.parseDouble(amount.getText()) * currency.get(currencyList.getSelectedItem())))) + "c");
             }
         });
         dialogPanel.add(addCurrency,c);
@@ -250,8 +258,8 @@ public class CurrencyMenu extends JFrame {
 
        // dialog.add(buttonSelect, BorderLayout.SOUTH);
         dialog.add(dialogPanel, BorderLayout.NORTH);
-        dialog.setSize(475,170);
-        dialog.setLocationRelativeTo(currencyFrame);
+        dialog.setSize(480,170);
+        dialog.setLocationRelativeTo(currencyDialog);
         dialog.setVisible(true);
 
         //JOptionPane otherCurrencyPopup = new JOptionPane()
@@ -260,31 +268,18 @@ public class CurrencyMenu extends JFrame {
     private static double addChaos(double amount) {
         currencyInChaos += amount;
 
-        if (currencyInChaos > 9999999) {
-            currencyInChaos = 9999999;
+        if (currencyInChaos > maxNumber) {
+            currencyInChaos = maxNumber;
         }
 
         //round to hundredths place
         currencyInChaos = (double)Math.round(currencyInChaos * 100d) / 100d;
 
         currencyC.setText("Current balance: " + currencyInChaos + "c");
+        MainWindow.updateCDisplay();
 
         return currencyInChaos;
     }
 
-    //TODO: make this into a dialog window to append to the main GUI
-    public static void init(Map<String, Double> cm) {
-        //setting up currency names and values
-        currency = cm;
-
-        //loading window
-        currencyFrame = new CurrencyMenu("Currency Input");
-        currencyFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        currencyFrame.addComponents(currencyFrame.getContentPane());
-        currencyFrame.pack();
-        currencyFrame.setLocationRelativeTo(null);
-        currencyFrame.setVisible(true);
-
-    }
 
 }
