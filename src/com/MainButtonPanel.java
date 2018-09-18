@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 public class MainButtonPanel extends JPanel {
     static JButton addUnique;
@@ -66,10 +65,10 @@ public class MainButtonPanel extends JPanel {
         loadBuild.setPreferredSize(new Dimension(105,25));
         this.add(loadBuild, c);
 
-        JButton about = new JButton("About");
+        JButton help = new JButton("Help");
         c.gridx=3;
-        about.setPreferredSize(new Dimension(105,25));
-        this.add(about, c);
+        help.setPreferredSize(new Dimension(105,25));
+        this.add(help, c);
 
         //buttons that are disabled unless a build is loaded:
         c.insets = new Insets(10,10,22,10);
@@ -82,6 +81,11 @@ public class MainButtonPanel extends JPanel {
         addCustom = new JButton("Add Custom");
         c.gridx=1;
         addCustom.setPreferredSize(new Dimension(105,25));
+        addCustom.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                CustomItemDialog cid = new CustomItemDialog(MainWindow.mainFrame, "Custom Item");
+            }
+        });
         this.add(addCustom, c);
 
         tba = new JButton("          ");

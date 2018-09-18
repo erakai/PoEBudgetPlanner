@@ -37,6 +37,7 @@ public class MainBuildPanel extends JPanel {
         itemList.setSelectedIndex(-1);
         //itemList.addListSelectionListener();
         itemList.setVisibleRowCount(5);
+        itemList.setCellRenderer(new CellRendererForType());
         JScrollPane listScrollPane = new JScrollPane(itemList);
         listScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         listScrollPane.setPreferredSize(new Dimension(240, 360));
@@ -73,6 +74,28 @@ public class MainBuildPanel extends JPanel {
         optionPanel = new JPanel();
 
         return optionPanel;
+    }
+
+
+    private class CellRendererForType extends JLabel implements ListCellRenderer {
+
+        public CellRendererForType() {
+            setOpaque(true);
+        }
+
+        public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+
+            // Assumes the stuff in the list has a pretty toString
+            setText(value.toString());
+
+            setForeground(CurrentInfo.getCurrentBuild().getItem(String.valueOf(value)).getColor());
+            setBackground(new Color(255,255,255));
+            if(isSelected) {
+                setBackground(new Color(17,128,240));
+            }
+
+            return this;
+        }
     }
 
 

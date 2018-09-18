@@ -84,7 +84,7 @@ public class CurrencyMenu extends JDialog {
             }
 
             AbstractDocument document = (AbstractDocument) enterFields[i].getDocument();
-            document.setDocumentFilter(myGetDocumentFilter());
+            document.setDocumentFilter(myGetDocumentFilter("[0-9]+"));
 
             inputFields.add(enterFields[i], con);
         }
@@ -141,12 +141,12 @@ public class CurrencyMenu extends JDialog {
     }
 
     //straight from StackOverflow hehehhehehe, makes sure they can only enter up to 5 numbers
-    private static DocumentFilter myGetDocumentFilter() {
+    public static DocumentFilter myGetDocumentFilter(String rege) {
         return new DocumentFilter() {
             public void replace(FilterBypass fb, int offs, int length, String str, AttributeSet a) throws BadLocationException {
                 String text = fb.getDocument().getText(0, fb.getDocument().getLength());
                 text += str;
-                if ((fb.getDocument().getLength() + str.length() - length) <= maxCharacters && text.matches("[0-9]+")) {
+                if ((fb.getDocument().getLength() + str.length() - length) <= maxCharacters && text.matches(rege)) {
                     super.replace(fb, offs, length, str, a);
                 } else {
                     Toolkit.getDefaultToolkit().beep();
@@ -155,7 +155,7 @@ public class CurrencyMenu extends JDialog {
             public void insertString(FilterBypass fb, int offs, String str, AttributeSet a) throws BadLocationException {
                 String text = fb.getDocument().getText(0, fb.getDocument().getLength());
                 text += str;
-                if ((fb.getDocument().getLength() + str.length()) <= maxCharacters && text.matches("[0-9]+")) {
+                if ((fb.getDocument().getLength() + str.length()) <= maxCharacters && text.matches(rege)) {
                     super.insertString(fb, offs, str, a);
                 } else {
                     Toolkit.getDefaultToolkit().beep();
@@ -212,7 +212,7 @@ public class CurrencyMenu extends JDialog {
         c.gridy=1;
         amount.setText("0");
         AbstractDocument document = (AbstractDocument) amount.getDocument();
-        document.setDocumentFilter(myGetDocumentFilter());
+        document.setDocumentFilter(myGetDocumentFilter("[0-9]+"));
         dialogPanel.add(amount, c);
 
         c.insets = new Insets(0,10,5,0);

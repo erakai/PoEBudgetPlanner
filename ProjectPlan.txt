@@ -8,7 +8,7 @@ poe.ninja.
 Use serializable options object?
 
 
-
+display a total of chaos added as well as the regular balance
 
 
 update from a day later:
