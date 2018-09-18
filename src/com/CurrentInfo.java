@@ -7,6 +7,7 @@ public class CurrentInfo {
     //TODO: Write this to a file where path given by user
 
     public static double currencyInChaos;
+    public static boolean buildLoaded;
     public static Map<String, Double> cm;
 
     public CurrentInfo() {
@@ -27,5 +28,13 @@ public class CurrentInfo {
 
     public static void setCm(Map<String, Double> cm) {
         CurrentInfo.cm = cm;
+    }
+
+    public static boolean isBuildLoaded() {
+        return buildLoaded;
+    }
+
+    public static void setBuildLoaded(boolean buildLoaded) {
+        CurrentInfo.buildLoaded = buildLoaded;
     }
 }

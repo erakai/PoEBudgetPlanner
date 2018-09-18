@@ -8,6 +8,7 @@ import java.io.IOException;
 
 public class MainWindow extends JFrame {
     public static MainWindow mainFrame;
+    public static MainButtonPanel buttonPanel;
     public static JLabel currentMoney;
     public MainWindow(String name) {
         super(name);
@@ -16,7 +17,9 @@ public class MainWindow extends JFrame {
 
     private static void addComponentsTop(Container pane) {
         pane.add(addTopPanel(), BorderLayout.NORTH);
+        pane.add(addButtonPanel(), BorderLayout.CENTER);
     }
+
 
     private static JPanel addTopPanel() {
         JPanel top = new JPanel(new GridBagLayout());
@@ -27,13 +30,13 @@ public class MainWindow extends JFrame {
         currentMoney.setToolTipText("Current balance in Chaos Orbs");
         c.gridy = 0;
         c.gridx = 0;
-        c.insets = new Insets(15, 5, 0, 35);
+        c.insets = new Insets(15, 15, 0, 25);
         top.add(currentMoney,c);
 
         JButton add = new JButton("Add Currency");
         c.gridy=1;
         c.gridx=0;
-        c.insets = new Insets(0,5,0,35);
+        c.insets = new Insets(0,15,15,25);
         add.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 CurrencyMenu x = new CurrencyMenu(CurrentInfo.getCm(), mainFrame, "Currency Input");
@@ -55,6 +58,11 @@ public class MainWindow extends JFrame {
         top.add(placeHolder, c);
         
         return top;
+    }
+
+    private static JPanel addButtonPanel() {
+        buttonPanel = new MainButtonPanel();
+        return buttonPanel;
     }
 
     public static void updateCDisplay() {
