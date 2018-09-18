@@ -6,10 +6,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
+import static com.CurrentInfo.currentBuild;
+
 public class MainWindow extends JFrame {
     public static MainWindow mainFrame;
     public static MainButtonPanel buttonPanel;
+    public static MainBuildPanel buildPanel;
     public static JLabel currentMoney;
+    public static JButton add;
+    public static JLabel currentBuildName;
+
     public MainWindow(String name) {
         super(name);
         setTitle(name);
@@ -18,6 +24,7 @@ public class MainWindow extends JFrame {
     private static void addComponentsTop(Container pane) {
         pane.add(addTopPanel(), BorderLayout.NORTH);
         pane.add(addButtonPanel(), BorderLayout.CENTER);
+        pane.add(addMainBuildPanel(), BorderLayout.SOUTH);
     }
 
 
@@ -26,14 +33,14 @@ public class MainWindow extends JFrame {
 
         GridBagConstraints c = new GridBagConstraints();
 
-        currentMoney = new JLabel("Currency: " + CurrentInfo.getCurrencyInChaos() + "c");
+        currentMoney = new JLabel("Currency: " + currentBuild.getCurrencyInChaos() + "c");
         currentMoney.setToolTipText("Current balance in Chaos Orbs");
         c.gridy = 0;
         c.gridx = 0;
         c.insets = new Insets(15, 15, 0, 25);
         top.add(currentMoney,c);
 
-        JButton add = new JButton("Add Currency");
+        add = new JButton("Add Currency");
         c.gridy=1;
         c.gridx=0;
         c.insets = new Insets(0,15,15,25);
@@ -51,6 +58,17 @@ public class MainWindow extends JFrame {
         c.insets = new Insets(15, 35,0,35);
         top.add(title, c);
 
+        String name = CurrentInfo.getCurrentBuild().getName();
+        String text = "";
+        if (!name.equals("")) {
+            text += ("Current Build: " + name);
+        }
+        currentBuildName = new JLabel(text);
+        c.gridx=1;
+        c.gridy=1;
+        c.insets = new Insets(5,35,15,35);
+        top.add(currentBuildName,c);
+
         JLabel placeHolder = new JLabel("                              ");
         c.gridx = 2;
         c.gridy = 0;
@@ -60,13 +78,22 @@ public class MainWindow extends JFrame {
         return top;
     }
 
+    public static void updateBuildName() {
+        currentBuildName.setText("Current Build: "  + CurrentInfo.getCurrentBuild().getName());
+    }
+
     private static JPanel addButtonPanel() {
         buttonPanel = new MainButtonPanel();
         return buttonPanel;
     }
 
+    private static JPanel addMainBuildPanel() {
+        buildPanel = new MainBuildPanel();
+        return buildPanel;
+    }
+
     public static void updateCDisplay() {
-        currentMoney.setText("Currency: " + CurrentInfo.getCurrencyInChaos() + "c");
+        currentMoney.setText("Currency: " + currentBuild.getCurrencyInChaos() + "c");
     }
 
     public static void init() {

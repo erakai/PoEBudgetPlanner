@@ -2,9 +2,15 @@ package com;
 
 public class Item {
     public String img;
-    public int name;
-    public int rarity;
+    public String name;
+    public String rarity;
     public int value;
+
+    public Item(String name, String rarity, int value) {
+        this.name = name;
+        this.rarity = rarity;
+        this.value = value;
+    }
 
     public String getImg() {
         return img;
@@ -14,19 +20,19 @@ public class Item {
         this.img = img;
     }
 
-    public int getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(int name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public int getRarity() {
+    public String getRarity() {
         return rarity;
     }
 
-    public void setRarity(int rarity) {
+    public void setRarity(String rarity) {
         this.rarity = rarity;
     }
 

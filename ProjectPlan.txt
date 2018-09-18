@@ -6,3 +6,12 @@ This interface will be created with the java swing library, and the Jackson json
 poe.ninja.
 
 Use serializable options object?
+
+
+
+
+
+update from a day later:
+this code used to neat
+it used to be readable
+run.

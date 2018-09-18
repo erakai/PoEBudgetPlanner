@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.CurrentInfo.currencyInChaos;
+import static com.CurrentInfo.currentBuild;
 
 public class CurrencyMenu extends JDialog {
     private static final int maxCharacters = 5;
@@ -92,9 +92,9 @@ public class CurrencyMenu extends JDialog {
 
 
         JPanel inputButtons = new JPanel(new GridBagLayout());
-        con.insets = new Insets(30,0,0,0);
+        con.insets = new Insets(50,5,0,5);
 
-        currencyC = new JLabel("Current balance: " + CurrentInfo.getCurrencyInChaos() + "c");
+        currencyC = new JLabel("Current balance: " + currentBuild.getCurrencyInChaos() + "c");
         currencyC.setFont(new Font(currencyC.getFont().getName(), Font.PLAIN, (int)(currencyC.getFont().getSize()*0.9)));
         currencyC.setToolTipText("Current balance in Chaos Orbs");
         con.gridx = 3;
@@ -111,7 +111,7 @@ public class CurrencyMenu extends JDialog {
         });
         inputButtons.add(clearCurrency, con);
 
-        con.insets = new Insets(0,0,0,0);
+        con.insets = new Insets(5,5,10,5);
         JButton submit = new JButton("Add Currency");
         con.gridx = 3;
         con.gridy = 2;
@@ -229,7 +229,7 @@ public class CurrencyMenu extends JDialog {
         //currencyList.setEditable(true); enable later when i can make it more specific
         dialogPanel.add(currencyList,c);
 
-        JLabel thisCurrencyCounter = new JLabel("Current balance: " + CurrentInfo.getCurrencyInChaos() + "c");
+        JLabel thisCurrencyCounter = new JLabel("Current balance: " + currentBuild.getCurrencyInChaos() + "c");
         c.gridx=0;
         c.gridy=3;
         dialogPanel.add(thisCurrencyCounter, c);
@@ -266,19 +266,19 @@ public class CurrencyMenu extends JDialog {
     }
 
     private static double addChaos(double amount) {
-        currencyInChaos += amount;
+        currentBuild.currencyInChaos += amount;
 
-        if (currencyInChaos > maxNumber) {
-            currencyInChaos = maxNumber;
+        if (currentBuild.currencyInChaos > maxNumber) {
+            currentBuild.currencyInChaos = maxNumber;
         }
 
         //round to hundredths place
-        currencyInChaos = (double)Math.round(currencyInChaos * 100d) / 100d;
+        currentBuild.currencyInChaos = (double)Math.round(currentBuild.currencyInChaos * 100d) / 100d;
 
-        currencyC.setText("Current balance: " + currencyInChaos + "c");
+        currencyC.setText("Current balance: " + currentBuild.currencyInChaos + "c");
         MainWindow.updateCDisplay();
 
-        return currencyInChaos;
+        return currentBuild.currencyInChaos;
     }
 
 

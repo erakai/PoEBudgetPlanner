@@ -2,6 +2,8 @@ package com;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class MainButtonPanel extends JPanel {
@@ -9,6 +11,7 @@ public class MainButtonPanel extends JPanel {
     static JButton addCustom;
     static JButton tba;
     static JButton tba2;
+    static JButton saveBuild;
     //public ArrayList<JButton> dependentButtons = new ArrayList<JButton>(4);
 
     public MainButtonPanel() {
@@ -31,7 +34,9 @@ public class MainButtonPanel extends JPanel {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        g.fillRect(0,0,this.getWidth(),7);
+        g.setColor(new Color(8, 25, 43));
+        g.fillRect(0,0,this.getWidth(),4);
+        g.fillRect(0,this.getHeight()-4,this.getWidth(),4);
     }
 
     //TODO: Use a loop for dependent buttons
@@ -43,9 +48,15 @@ public class MainButtonPanel extends JPanel {
         c.gridx=0;
         c.gridy=0;
         newBuild.setPreferredSize(new Dimension(105,25));
+        newBuild.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                NewBuildDialog nbd = new NewBuildDialog(MainWindow.mainFrame,"New Build");
+
+            }
+        });
         this.add(newBuild,c);
 
-        JButton saveBuild = new JButton("Save Build");
+        saveBuild = new JButton("Save Build");
         c.gridx=1;
         saveBuild.setPreferredSize(new Dimension(105,25));
         this.add(saveBuild, c);
@@ -61,7 +72,7 @@ public class MainButtonPanel extends JPanel {
         this.add(about, c);
 
         //buttons that are disabled unless a build is loaded:
-        c.insets = new Insets(10,10,10,10);
+        c.insets = new Insets(10,10,22,10);
         addUnique = new JButton("Add Unique");
         c.gridx=0;
         c.gridy=1;
@@ -91,6 +102,10 @@ public class MainButtonPanel extends JPanel {
         addCustom.setEnabled(CurrentInfo.isBuildLoaded());
         tba.setEnabled(CurrentInfo.isBuildLoaded());
         tba2.setEnabled(CurrentInfo.isBuildLoaded());
+
+        saveBuild.setEnabled(CurrentInfo.isBuildLoaded());
+
+        MainWindow.add.setEnabled(CurrentInfo.isBuildLoaded());
     }
 
 
