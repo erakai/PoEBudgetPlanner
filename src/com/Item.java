@@ -23,10 +23,10 @@ public class Item {
 
     //TODO: get correct colors
     static {
-        colorKey.put("Normal", new Color(222,222,222));
-        colorKey.put("Magic", new Color(37, 139, 198));
-        colorKey.put("Rare", new Color(243, 243,80));
-        colorKey.put("Unique", new Color(242, 128, 15));
+        colorKey.put("Normal", new Color(193,193,193));
+        colorKey.put("Magic", new Color(118, 111, 205));
+        colorKey.put("Rare", new Color(235, 232,127));
+        colorKey.put("Unique", new Color(144, 82, 35));
     }
 
     public Item(String name, String rarity, Color color, int value) {

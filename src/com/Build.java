@@ -22,6 +22,14 @@ public class Build {
         return null;
     }
 
+    public double getTotalCost() {
+        double tC = 0;
+        for (Item i: items) {
+            tC += i.getValue();
+        }
+        return tC;
+    }
+
     public String getDescription() {
         return description;
     }

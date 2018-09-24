@@ -51,7 +51,7 @@ public class MainWindow extends JFrame {
         });
         top.add(add, c);
 
-        JLabel title = new JLabel("Budget Planner");
+        JLabel title = new JLabel("PoE Budget Planner");
         title.setFont(new Font(title.getFont().getName(), Font.BOLD, (int)(title.getFont().getSize()*2)));
         c.gridx = 1;
         c.gridy = 0;
