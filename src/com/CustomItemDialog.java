@@ -59,7 +59,7 @@ public class CustomItemDialog extends JDialog {
         itemCost = new JTextField(7);
         itemCost.setText("0");
         AbstractDocument document = (AbstractDocument) itemCost.getDocument();
-        document.setDocumentFilter(CurrencyMenu.myGetDocumentFilter("^[0-9]+[.]?[0-9]{0,1}$"));
+        document.setDocumentFilter(CurrencyMenu.myGetDocumentFilter("^[0-9]+[.]?[0-9]{0,1}$",7));
         c.gridy = 3;
         input.add(itemCost, c);
 
@@ -106,7 +106,7 @@ public class CustomItemDialog extends JDialog {
     }
 
     public void createItem() {
-        Item newItem = new Item(chooseName.getText(),String.valueOf(typeOfItem.getSelectedItem()), Item.colorKey.get(typeOfItem.getSelectedItem()), Integer.parseInt(itemCost.getText()));
+        Item newItem = new Item(chooseName.getText(),String.valueOf(typeOfItem.getSelectedItem()),description.getText(), Item.colorKey.get(typeOfItem.getSelectedItem()), Double.parseDouble(itemCost.getText()));
         MainBuildPanel.addListItem(newItem);
         customItemDialog.dispose();
     }

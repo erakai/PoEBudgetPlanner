@@ -9,7 +9,8 @@ public class Item {
     public String name;
     public String type;
     public Color color;
-    public int value;
+    public String description;
+    public double value;
 
     public static String[] types = {
             "Normal",
@@ -19,7 +20,7 @@ public class Item {
     };
 
     public static HashMap<String, Color> colorKey = new HashMap<String, Color>();
-
+    public static HashMap<Color, Color> backgroundKey = new HashMap<>();
 
     //TODO: get correct colors
     static {
@@ -27,15 +28,31 @@ public class Item {
         colorKey.put("Magic", new Color(118, 111, 205));
         colorKey.put("Rare", new Color(235, 232,127));
         colorKey.put("Unique", new Color(144, 82, 35));
+
+        backgroundKey.put(new Color(193,193,193), new Color(70,70,70));
+        backgroundKey.put(new Color(235, 232,127), new Color(70,70,70));
+
+        backgroundKey.put(new Color(118, 111, 205), new Color(220, 220, 220));
+        backgroundKey.put(new Color(144,82,35), new Color(220, 220, 220));
+
     }
 
-    public Item(String name, String rarity, Color color, int value) {
+    public Item(String name, String rarity, String desc, Color color, double value) {
         this.name = name;
         this.type = rarity;
+        this.description = desc;
         this.value = value;
         this.color = color;
 
 
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Color getColor() {
@@ -70,7 +87,7 @@ public class Item {
         this.type = type;
     }
 
-    public int getValue() {
+    public double getValue() {
         return value;
     }
 

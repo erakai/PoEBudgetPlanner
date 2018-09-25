@@ -1,10 +1,12 @@
 package com;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 
 public class MainBuildPanel extends JPanel {
-    private JPanel showcasePanel;
+    private ItemShowcasePanel showcasePanel;
     private JPanel listPanel;
     private JPanel optionPanel;
 
@@ -23,6 +25,7 @@ public class MainBuildPanel extends JPanel {
         c.gridx=0;
         this.add(addListPanel(),c);
         c.gridx=1;
+        c.insets = new Insets(5,10,30,5);
         this.add(addShowcasePanel(),c);
     }
 
@@ -44,11 +47,24 @@ public class MainBuildPanel extends JPanel {
         itemList.setCellRenderer(new CellRendererForType());
         JScrollPane listScrollPane = new JScrollPane(itemList);
         listScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        itemList.addListSelectionListener(new ListSelectionListener() {
+            public void valueChanged(ListSelectionEvent e) {
+                if (!itemList.isSelectionEmpty()) {
+                    showcasePanel.updateDisplay(CurrentInfo.currentBuild.getItem((String) (itemList.getSelectedValue())));
+                } else {
+                    if (itemList.getModel().getSize() == 0) {
+                        showcasePanel.setVisible(false);
+                    } else {
+                        showcasePanel.updateDisplay(CurrentInfo.currentBuild.getItem((String) (itemList.getModel().getElementAt(itemList.getLastVisibleIndex()))));
+                    }
+                }
+            }
+        });
         listScrollPane.setPreferredSize(new Dimension(240, 360));
         listPanel.add(listScrollPane,c);
 
         c.gridy= 1;
-        totalC = new JLabel("Total Price: " +  String.valueOf(CurrentInfo.currentBuild.getTotalCost()));
+        totalC = new JLabel("Total Price: " +  String.valueOf(CurrentInfo.currentBuild.getTotalCost()) + "c");
         listPanel.add(totalC,c);
 
         updateList();
@@ -68,7 +84,7 @@ public class MainBuildPanel extends JPanel {
     }
 
     public static void updateList() {
-        totalC.setText("Total Price: " + String.valueOf(CurrentInfo.currentBuild.getTotalCost()));
+        totalC.setText("Total Price: " + String.valueOf(CurrentInfo.currentBuild.getTotalCost()) + "c");
 
         currentList.clear();
         for (Item i: CurrentInfo.currentBuild.items) {
@@ -102,7 +118,7 @@ public class MainBuildPanel extends JPanel {
 
             setText(value.toString());
 
-            setForeground(CurrentInfo.getCurrentBuild().getItem(String.valueOf(value).split(":")[0]).getColor());
+            setForeground(CurrentInfo.getCurrentBuild().getItem(String.valueOf(value)).getColor());
             setBackground(new Color(255,255,255));
             if(isSelected) {
                 setBackground(new Color(17,128,240));

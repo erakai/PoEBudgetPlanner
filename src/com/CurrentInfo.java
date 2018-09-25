@@ -1,5 +1,10 @@
 package com;
 
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.Map;
 
 public class CurrentInfo {
@@ -20,6 +25,15 @@ public class CurrentInfo {
 
     public static Map<String, Double> getCm() {
         return cm;
+    }
+
+    public static ImageIcon getImage(String url) {
+        try {
+            return new ImageIcon(ImageIO.read(new File("/Users/mbp/Documents/JavaPrograms/10 PoeBudgetPlanner/PoeBudgetPlanner/src/com/placeholder.png")).getScaledInstance(64,64, Image.SCALE_SMOOTH));
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return null;
     }
 
     public static void setCm(Map<String, Double> cm) {

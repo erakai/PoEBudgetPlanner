@@ -15,7 +15,6 @@ import java.util.Map;
 import static com.CurrentInfo.currentBuild;
 
 public class CurrencyMenu extends JDialog {
-    private static final int maxCharacters = 5;
     private static final int maxNumber = 9999999;
     private static final int textAreaColumns = 4;
 
@@ -84,7 +83,7 @@ public class CurrencyMenu extends JDialog {
             }
 
             AbstractDocument document = (AbstractDocument) enterFields[i].getDocument();
-            document.setDocumentFilter(myGetDocumentFilter("[0-9]+"));
+            document.setDocumentFilter(myGetDocumentFilter("[0-9]+", 5));
 
             inputFields.add(enterFields[i], con);
         }
@@ -141,7 +140,7 @@ public class CurrencyMenu extends JDialog {
     }
 
     //straight from StackOverflow hehehhehehe, makes sure they can only enter up to 5 numbers
-    public static DocumentFilter myGetDocumentFilter(String rege) {
+    public static DocumentFilter myGetDocumentFilter(String rege, int maxCharacters) {
         return new DocumentFilter() {
             public void replace(FilterBypass fb, int offs, int length, String str, AttributeSet a) throws BadLocationException {
                 String text = fb.getDocument().getText(0, fb.getDocument().getLength());
@@ -212,7 +211,7 @@ public class CurrencyMenu extends JDialog {
         c.gridy=1;
         amount.setText("0");
         AbstractDocument document = (AbstractDocument) amount.getDocument();
-        document.setDocumentFilter(myGetDocumentFilter("[0-9]+"));
+        document.setDocumentFilter(myGetDocumentFilter("[0-9]+",5));
         dialogPanel.add(amount, c);
 
         c.insets = new Insets(0,10,5,0);
