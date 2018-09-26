@@ -1,10 +1,11 @@
 package com;
 
 import java.awt.*;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Item {
+public class Item implements Serializable {
     public String img;
     public String name;
     public String type;

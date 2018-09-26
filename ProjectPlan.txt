@@ -15,3 +15,8 @@ update from a day later:
 this code used to neat
 it used to be readable
 run.
+
+todo: still gotta make it so that currency adder has a close button
+and all the saving/unique items/uploading images for custom items
+help page
+removing an item from the build

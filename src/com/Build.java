@@ -1,9 +1,10 @@
 package com;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Build {
+public class Build implements Serializable {
     public double currencyInChaos;
     public List<Item> items = new ArrayList<Item>();
     public String name;
