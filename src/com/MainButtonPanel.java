@@ -58,11 +58,21 @@ public class MainButtonPanel extends JPanel {
         saveBuild = new JButton("Save Build");
         c.gridx=1;
         saveBuild.setPreferredSize(new Dimension(105,25));
+        saveBuild.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                PathDialog pd = new PathDialog(MainWindow.mainFrame, "Save");
+            }
+        });
         this.add(saveBuild, c);
 
         JButton loadBuild = new JButton("Load Build");
         c.gridx=2;
         loadBuild.setPreferredSize(new Dimension(105,25));
+        loadBuild.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                PathDialog pd = new PathDialog(MainWindow.mainFrame, "Load");
+            }
+        });
         this.add(loadBuild, c);
 
         JButton help = new JButton("Help");
