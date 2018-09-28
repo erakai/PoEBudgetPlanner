@@ -72,14 +72,18 @@ public class MainBuildPanel extends JPanel {
         return listPanel;
     }
 
+    public static void updateTotalPrice() {
+        totalC.setText("Total Price: " +  String.valueOf(CurrentInfo.currentBuild.getTotalCost()) + "c");
+    }
+
 
     public static void addListItem(Item item) {
-        CurrentInfo.currentBuild.addItem(item);
+        CurrentInfo.currentBuild.items.add(item);
         updateList();
     }
 
     public static void remListItem(Item item) {
-        CurrentInfo.currentBuild.remItem(item);
+        CurrentInfo.currentBuild.items.remove(item);
         updateList();
     }
 
@@ -118,7 +122,7 @@ public class MainBuildPanel extends JPanel {
 
             setText(value.toString());
 
-            setForeground(CurrentInfo.getCurrentBuild().getItem(String.valueOf(value)).getColor());
+            setForeground(Item.colorKey.get(CurrentInfo.getCurrentBuild().getItem(String.valueOf(value)).getType()));
             setBackground(new Color(255,255,255));
             if(isSelected) {
                 setBackground(new Color(17,128,240));

@@ -19,7 +19,7 @@ public class CurrencyMenu extends JDialog {
     private static final int textAreaColumns = 4;
 
     public static JDialog currencyDialog;
-    public static JLabel currencyC;
+    public static JLabel currencyC = new JLabel();
 
     public static String[] currencyNames = {
             "Exalted Orb", "Chaos Orb", "Vaal Orb", "Orb of Regret",
@@ -93,7 +93,7 @@ public class CurrencyMenu extends JDialog {
         JPanel inputButtons = new JPanel(new GridBagLayout());
         con.insets = new Insets(50,5,0,5);
 
-        currencyC = new JLabel("Current balance: " + currentBuild.getCurrencyInChaos() + "c");
+        currencyC.setText("Current balance: " + currentBuild.getCurrencyInChaos() + "c");
         currencyC.setFont(new Font(currencyC.getFont().getName(), Font.PLAIN, (int)(currencyC.getFont().getSize()*0.9)));
         currencyC.setToolTipText("Current balance in Chaos Orbs");
         con.gridx = 3;
@@ -280,5 +280,8 @@ public class CurrencyMenu extends JDialog {
         return currentBuild.currencyInChaos;
     }
 
+    public static void updateChaosDisplay() {
+        currencyC.setText("Current balance: " + String.valueOf(CurrentInfo.getCurrentBuild().getCurrencyInChaos()) + "c");
+    }
 
 }

@@ -1,5 +1,8 @@
 package com;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.awt.*;
 import java.io.Serializable;
 import java.util.HashMap;
@@ -9,7 +12,6 @@ public class Item implements Serializable {
     public String img;
     public String name;
     public String type;
-    public Color color;
     public String description;
     public double value;
 
@@ -38,13 +40,20 @@ public class Item implements Serializable {
 
     }
 
-    public Item(String name, String rarity, String desc, Color color, double value) {
+    @JsonCreator
+    public Item(@JsonProperty("img") String img, @JsonProperty("name") String name, @JsonProperty("type") String type, @JsonProperty("description") String description, @JsonProperty("value") double value) {
+        this.img = img;
+        this.name = name;
+        this.type = type;
+        this.description = description;
+        this.value = value;
+    }
+
+    public Item(String name, String rarity, String desc, double value) {
         this.name = name;
         this.type = rarity;
         this.description = desc;
         this.value = value;
-        this.color = color;
-
 
     }
 
@@ -56,13 +65,7 @@ public class Item implements Serializable {
         this.description = description;
     }
 
-    public Color getColor() {
-        return color;
-    }
 
-    public void setColor(Color color) {
-        this.color = color;
-    }
 
     public String getImg() {
         return img;

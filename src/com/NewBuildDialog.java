@@ -13,7 +13,7 @@ public class NewBuildDialog extends JDialog {
         super(frame,name,true);
         newBuildDialog = this;
         newBuildDialog.setLocationRelativeTo(frame);
-        newBuildDialog.setSize(200,125);
+        newBuildDialog.setSize(275,165);
         addComponents();
         newBuildDialog.setVisible(true);
     }
@@ -24,14 +24,21 @@ public class NewBuildDialog extends JDialog {
 
         GridBagConstraints c = new GridBagConstraints();
 
+        c.insets=new Insets(5,5,5,5);
+
+        JLabel warning = new JLabel("Don't forget to save your current build!");
+        top.add(warning, c);
+
         c.insets=new Insets(5,5,0,5);
 
-        JLabel nameEnter = new JLabel("Enter build name:");
+
+        JLabel nameEnter = new JLabel("Enter new build name:");
+        c.gridy = 1;
         top.add(nameEnter, c);
 
         userFill = new JTextField(7);
         userFill.setEditable(true);
-        c.gridy=1;
+        c.gridy=2;
         top.add(userFill,c);
 
         c.insets=new Insets(5,5,5,5);
@@ -62,9 +69,8 @@ public class NewBuildDialog extends JDialog {
     private void onCreate() {
         CurrentInfo.setBuildLoaded(true);
         CurrentInfo.currentBuild = new Build(userFill.getText());
-        MainButtonPanel.updateButtons();
-        MainWindow.updateBuildName();
-        MainBuildPanel.updateList();
+        MainWindow.updateAll();
+
         newBuildDialog.dispose();
     }
 

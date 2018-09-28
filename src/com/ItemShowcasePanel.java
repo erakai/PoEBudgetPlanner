@@ -10,6 +10,8 @@ public class ItemShowcasePanel extends JPanel {
     private static JLabel value;
     private static JTextArea description;
 
+    private static ItemShowcasePanel thisPanel;
+
     private static Item showcasing;
 
 
@@ -17,7 +19,9 @@ public class ItemShowcasePanel extends JPanel {
         super(layout);
         this.setVisible(false);
 
-        this.showcasing = new Item("","", "", new Color(0,0,0),0);
+        thisPanel = this;
+
+        this.showcasing = new Item("","", "",0);
         this.addComponents();
         this.setPreferredSize(new Dimension(250,360));
     }
@@ -53,20 +57,24 @@ public class ItemShowcasePanel extends JPanel {
 
     }
 
-    public void updateDisplay(Item i) {
+    public static void updateDisplay(Item i) {
         showcasing = i;
         name.setText(showcasing.getName());
-        name.setForeground(showcasing.getColor());
-        name.setBackground(Item.backgroundKey.get(showcasing.getColor()));
+        name.setForeground(Item.colorKey.get(showcasing.getType()));
+        name.setBackground(Item.backgroundKey.get(Item.colorKey.get(showcasing.getType())));
         name.setOpaque(true);
         name.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
         image.setIcon(CurrentInfo.getImage(showcasing.getImg()));
         value.setText(showcasing.getValue() + "c");
-        value.setBackground(Item.backgroundKey.get(showcasing.getColor()));
+        value.setBackground(Item.backgroundKey.get(Item.colorKey.get(showcasing.getType())));
         value.setOpaque(true);
         value.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
-        value.setForeground(showcasing.getColor());
+        value.setForeground(Item.colorKey.get(showcasing.getType()));
         description.setText(showcasing.getDescription());
-        this.setVisible(true);
+        thisPanel.setVisible(true);
+    }
+
+    public static void updateToInvis() {
+        thisPanel.setVisible(false);
     }
 }

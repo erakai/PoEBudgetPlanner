@@ -106,7 +106,7 @@ public class CustomItemDialog extends JDialog {
     }
 
     public void createItem() {
-        Item newItem = new Item(chooseName.getText(),String.valueOf(typeOfItem.getSelectedItem()),description.getText(), Item.colorKey.get(typeOfItem.getSelectedItem()), Double.parseDouble(itemCost.getText()));
+        Item newItem = new Item(chooseName.getText(),String.valueOf(typeOfItem.getSelectedItem()),description.getText(), Double.parseDouble(itemCost.getText()));
         MainBuildPanel.addListItem(newItem);
         customItemDialog.dispose();
     }

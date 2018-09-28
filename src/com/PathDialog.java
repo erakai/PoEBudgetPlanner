@@ -1,6 +1,8 @@
 package com;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.awt.*;
 import java.io.File;
 import javax.swing.*;
@@ -24,10 +26,13 @@ public class PathDialog extends JDialog {
     private void init() {
         jf = new JFileChooser();
 
-        jf.setFileFilter(new jsonFilter());
 
         if (saveload.equals("Save")) {
+            jf.setApproveButtonText("Save in Folder");
             jf.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        } else {
+            jf.setApproveButtonText("Load");
+            jf.setFileFilter(new jsonFilter());
         }
 
         getDir();
@@ -37,17 +42,25 @@ public class PathDialog extends JDialog {
 
     private void getDir() {
         int returnVal = jf.showOpenDialog(pathDialog);
-
+        ObjectMapper mapper = new ObjectMapper();
 
         if (returnVal == JFileChooser.APPROVE_OPTION) {
-
-            switch(saveload) {
-                case "Save":
-
-                    break;
-                case "Load":
-
-                    break;
+            try {
+                switch (saveload) {
+                    case "Save":
+                        File file = jf.getSelectedFile();
+                        String fullPath = file.getAbsolutePath();
+                        mapper.writeValue(new File(fullPath + "\\" + CurrentInfo.getCurrentBuild().getName() + ".json"), CurrentInfo.getCurrentBuild());
+                        break;
+                    case "Load":
+                        File f = jf.getSelectedFile();
+                        String fP = f.getAbsolutePath();
+                        CurrentInfo.setCurrentBuild(mapper.readValue(new File(fP), Build.class));
+                        MainWindow.updateAll();
+                        break;
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
             }
 
 
@@ -79,7 +92,7 @@ public class PathDialog extends JDialog {
 
         //The description of this filter
         public String getDescription() {
-            return "Just Images";
+            return "Just JSON Files please";
         }
     }
 

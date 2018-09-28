@@ -96,6 +96,17 @@ public class MainWindow extends JFrame {
         currentMoney.setText("Currency: " + currentBuild.getCurrencyInChaos() + "c");
     }
 
+    public static void updateAll() {
+        updateCDisplay();
+        updateBuildName();
+        CurrentInfo.setBuildLoaded(true);
+        MainButtonPanel.updateButtons();
+        MainBuildPanel.updateList();
+        MainBuildPanel.updateTotalPrice();
+        ItemShowcasePanel.updateToInvis();
+        CurrencyMenu.updateChaosDisplay();
+    }
+
     public static void init() {
         mainFrame = new MainWindow("Budget Planner");
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

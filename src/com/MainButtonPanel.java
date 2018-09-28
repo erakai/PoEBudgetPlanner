@@ -116,9 +116,7 @@ public class MainButtonPanel extends JPanel {
         addCustom.setEnabled(CurrentInfo.isBuildLoaded());
         tba.setEnabled(CurrentInfo.isBuildLoaded());
         tba2.setEnabled(CurrentInfo.isBuildLoaded());
-
         saveBuild.setEnabled(CurrentInfo.isBuildLoaded());
-
         MainWindow.add.setEnabled(CurrentInfo.isBuildLoaded());
     }
 
