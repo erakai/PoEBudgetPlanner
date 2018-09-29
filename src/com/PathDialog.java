@@ -50,7 +50,7 @@ public class PathDialog extends JDialog {
                     case "Save":
                         File file = jf.getSelectedFile();
                         String fullPath = file.getAbsolutePath();
-                        mapper.writeValue(new File(fullPath + "\\" + CurrentInfo.getCurrentBuild().getName() + ".json"), CurrentInfo.getCurrentBuild());
+                        mapper.writeValue(new File(fullPath + "/" + CurrentInfo.getCurrentBuild().getName() + ".json"), CurrentInfo.getCurrentBuild());
                         break;
                     case "Load":
                         File f = jf.getSelectedFile();

@@ -106,6 +106,9 @@ public class CustomItemDialog extends JDialog {
     }
 
     public void createItem() {
+        if (itemCost.getText().replaceAll("\n","").replaceAll(" ", "").equals("")) {
+            itemCost.setText("0");
+        }
         Item newItem = new Item(chooseName.getText(),String.valueOf(typeOfItem.getSelectedItem()),description.getText(), Double.parseDouble(itemCost.getText()));
         MainBuildPanel.addListItem(newItem);
         customItemDialog.dispose();

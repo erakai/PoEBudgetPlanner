@@ -29,7 +29,7 @@ public class CurrentInfo {
 
     public static ImageIcon getImage(String url) {
         try {
-            return new ImageIcon(ImageIO.read(new File("C:\\Users\\eragon\\Documents\\JavaPrograms\\10 PoEBudgetPlanner\\PoeBudgetPlanner\\src\\com\\placeholder.png")).getScaledInstance(64,64, Image.SCALE_SMOOTH));
+            return new ImageIcon(ImageIO.read(new File("/Users/mbp/Documents/JavaPrograms/10 PoeBudgetPlanner/PoeBudgetPlanner/src/com/placeholder.png")).getScaledInstance(64,64, Image.SCALE_SMOOTH));
         } catch (IOException ex) {
             ex.printStackTrace();
         }
