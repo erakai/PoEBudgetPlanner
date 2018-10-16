@@ -23,7 +23,7 @@ public class AddUniqueDialog extends JDialog {
         super(frame, name, true);
         addUniqueDialog = this;
         addUniqueDialog.setLocationRelativeTo(frame);
-        addUniqueDialog.setSize(320,275);
+        addUniqueDialog.setSize(340,295);
         addComponents();
         addUniqueDialog.setVisible(true);
     }
