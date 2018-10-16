@@ -9,14 +9,97 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
 public class Dataload {
+
+    //TODO: make league not hard coded
+
     private static String add = "https://poe.ninja/api/data/currencyoverview?league=Delve&type=Currency";
     private static ObjectMapper objMap = new ObjectMapper();
-    private static int timeout = 5000;
+    private static int timeout = 10000;
+
+    public static ArrayList<Item> weapons6Link = new ArrayList<>();
+    public static ArrayList<Item> weapons5Link = new ArrayList<>();
+    public static ArrayList<Item> weaponsBase = new ArrayList<>();
+    public static ArrayList<Item> armours6Link = new ArrayList<>();
+    public static ArrayList<Item> armours5Link = new ArrayList<>();
+    public static ArrayList<Item> armoursBase = new ArrayList<>();
+    public static ArrayList<Item> accessories = new ArrayList<>();
+    public static ArrayList<Item> jewels = new ArrayList<>();
+    public static ArrayList<Item> flasks = new ArrayList<>();
+
+    public static String[] itemTypes = {
+            "UniqueWeapon",
+            "UniqueArmour",
+            "UniqueAccessory",
+            "UniqueJewel",
+            "UniqueFlask"
+    };
+
+
+    public static HashMap<String, ArrayList<Item>> items = new HashMap<>();
+
+    static {
+        //parameter + link number
+        items.put("UniqueWeapon6Links", weapons6Link);
+        items.put("UniqueWeapon5Links", weapons5Link);
+        items.put("UniqueWeapon0Links", weaponsBase);
+        items.put("UniqueArmour6Links", armours6Link);
+        items.put("UniqueArmour5Links", armours5Link);
+        items.put("UniqueArmour0Links", armoursBase);
+        items.put("UniqueAccessory0Links", accessories);
+        items.put("UniqueJewel0Links", jewels);
+        items.put("UniqueFlask0Links", flasks);
+
+
+
+        JsonNode root;
+
+
+        try {
+
+            for (String x: itemTypes) {
+                root = objMap.readTree(getJSON(getUrl(x), timeout)).get("lines");
+
+                int currentI = 0;
+                while(root.get(currentI+1) != null) {
+                    currentI++;
+
+                    JsonNode current = root.get(currentI);
+                    String name = current.get("name").toString().replaceAll("\"", "");
+                    String img = current.get("icon").toString().replaceAll("\"","").split("\\?")[0];
+                    double cValue = current.get("chaosValue").doubleValue();
+                    int links = current.get("links").intValue();
+                    String descrip = (links + " links. \n\n") + current.get("flavourText").toString();
+
+                    Item nI = new Item(img, name, "Unique", descrip, cValue);
+
+                   // System.out.println(nI);
+
+                    items.get(x+String.valueOf(links) + "Links").add(nI);
+                }
+
+            }
+
+
+
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+
+
+    }
+
+
+    private static String getUrl(String iT) {
+        return ("https://poe.ninja/api/data/itemoverview?league=Delve&type="+iT);
+    }
 
     public static Map<String, Double> getCurrencyMap() {
         JsonNode root;

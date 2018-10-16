@@ -5,6 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Map;
 
 public class CurrentInfo {
@@ -28,10 +29,19 @@ public class CurrentInfo {
     }
 
     public static ImageIcon getImage(String url) {
-        try {
-            return new ImageIcon(ImageIO.read(new File("/Users/mbp/Documents/JavaPrograms/10 PoeBudgetPlanner/PoeBudgetPlanner/src/com/placeholder.png")).getScaledInstance(64,64, Image.SCALE_SMOOTH));
-        } catch (IOException ex) {
-            ex.printStackTrace();
+        if (url == null) {
+            try {
+                return new ImageIcon(ImageIO.read(new File("src/com/placeholder.png")).getScaledInstance(64, 64, Image.SCALE_SMOOTH));
+            } catch(IOException ex){
+                ex.printStackTrace();
+            }
+        } else {
+            try {
+                URL newurl = new URL(url);
+                return new ImageIcon(ImageIO.read(newurl).getScaledInstance(64,64,Image.SCALE_FAST));
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
         }
         return null;
     }

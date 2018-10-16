@@ -85,6 +85,11 @@ public class MainButtonPanel extends JPanel {
         addUnique = new JButton("Add Unique");
         c.gridx=0;
         c.gridy=1;
+        addUnique.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                AddUniqueDialog aU = new AddUniqueDialog(MainWindow.mainFrame, "Add Unique");
+            }
+        });
         addUnique.setPreferredSize(new Dimension(105,25));
         this.add(addUnique, c);
 
@@ -98,11 +103,13 @@ public class MainButtonPanel extends JPanel {
         });
         this.add(addCustom, c);
 
+        //remove item
         tba = new JButton("          ");
         c.gridx=2;
         tba.setPreferredSize(new Dimension(105,25));
         this.add(tba,c);
 
+        //edit item
         tba2 = new JButton("          ");
         c.gridx=3;
         tba2.setPreferredSize(new Dimension(105,25));

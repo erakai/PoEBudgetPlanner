@@ -65,7 +65,10 @@ public class Item implements Serializable {
         this.description = description;
     }
 
-
+    @Override
+    public String toString() {
+        return "Name: " + name + " | Value: " +  value + " | Description: \n" + description;
+    }
 
     public String getImg() {
         return img;
