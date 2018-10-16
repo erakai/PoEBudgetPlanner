@@ -46,6 +46,8 @@ public class AddUniqueDialog extends JDialog {
             i++;
         }
 
+        c.insets = new Insets(5,5,5,5);
+
         c.gridwidth = 2;
         itemTypeSelector = new JComboBox<>(itemTypes);
         itemTypeSelector.addActionListener(new ActionListener() {
