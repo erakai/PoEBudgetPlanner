@@ -11,7 +11,7 @@ public class MainBuildPanel extends JPanel {
     private JPanel optionPanel;
 
     private static DefaultListModel<String> currentList;
-    private static JList itemList;
+    public static JList itemList;
     private static JLabel totalC;
 
     public MainBuildPanel() {
