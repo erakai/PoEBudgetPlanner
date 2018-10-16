@@ -104,7 +104,7 @@ public class MainButtonPanel extends JPanel {
         this.add(addCustom, c);
 
         //remove item
-        tba = new JButton("Remove Item");
+        tba = new JButton("Remove");
         c.gridx=2;
         tba.setPreferredSize(new Dimension(105,25));
         tba.addActionListener(new ActionListener() {
